@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+    #id1{width: 1000px;}
+    /* #id2{position:relative;bottom: 500px;opacity: 0.5;} */
+    body{
+        background-image: url('{% static "photo/school_6a99f4.jpg" %}');
+    }
+
+</style>
+<body>
+    <!-- <img id="id1" src="{"> -->
+    <br>
+    <h1 style="text-align: center;">WELCOME</h1>
+    <br><br>
+    <!--     -->
+    <form id='id2' action="{% url 'insert' %}" method="post" class="form-group mx-auto" style="width: 400px;">
+        
+        {% csrf_token %}
+        <input name="studentfname" placeholder="Firstname" required class="form-control"><br>
+        <input name="studentlname" placeholder="Lastname"  required class="form-control"><br>
+        <input type="number"  name="studentnumber" placeholder="phone number"  required class="form-control"><br>
+        <input name="studentemail" placeholder="email"  required class="form-control"><br>
+        <input name="studentcourse" placeholder="course"  required class="form-control"><br>
+        <textarea name="studentaddress" placeholder="address"  required class="form-control"></textarea><br>
+        <button type="submit" class="btn btn-success">SUBMIT</button>
+    </form>
+    
+</body>
+</html>

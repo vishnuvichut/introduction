@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-image: url('{% static "photo/103307436.jpg" %}');
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <br><br>
+    <h1 style="text-align: center;" class="text-light">UPDATE</h1>
+    <br><br>
+    <form action="{% url 'update' newdata.id %}" method="post" class="form-group mx-auto" style="width: 400px;">
+        {% csrf_token %}
+        <input value="{{newdata.studentfname}}"  name="studentfname" class="form-control" ><br>
+        <input value="{{newdata.studentlname}}" name="studentlname" class="form-control"><br>
+        <input value="{{newdata.studentnumber}}" name="studentnumber" class="form-control"><br>
+        <input value="{{newdata.studentemail}}" name="studentemail" class="form-control"><br>
+        <input value="{{newdata.studentcourse}}" name="studentcourse" class="form-control"><br>
+        <input value="{{newdata.studentaddress}}" name="studentaddress" class="form-control"><br>
+        <button type="submit" class="btn btn-success">SUBMIT</button>
+        
+    </form>
+</body>
+</html>
